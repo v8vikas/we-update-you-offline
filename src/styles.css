@@ -18,9 +18,14 @@ img {
   user-select: none;
 }
 
-ul,
-li {
+ul, li {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+mat-toolbar.header {
+  background: #e65e00;
+  color: #fff;
+  font-size: 16px;
 }

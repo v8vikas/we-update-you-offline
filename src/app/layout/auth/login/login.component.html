@@ -1,0 +1,19 @@
+<div class="inner">
+  <mat-toolbar class="header">
+    <p class="title">We Update You</p>
+  </mat-toolbar>
+  <div>
+    <form [formGroup]="loginForm">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Username" formControlName="username">
+        <mat-hint>Minimum 4 charecters and can contain only alphanumric.</mat-hint>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Password" formControlName="password">
+        <mat-hint>Minimu 4 charecters</mat-hint>
+      </mat-form-field>
+    </form>
+    <button mat-button (click)="login()" color="warm" class="example-full-width">Login</button>
+    <button mat-button color="primary" class="example-full-width">Create Account</button>
+  </div>
+</div>

@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UICarouselModule } from 'ui-carousel';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { HttpService } from './services/http.service';
 
 
 
@@ -27,7 +28,7 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     UICarouselModule,
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 

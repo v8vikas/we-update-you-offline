@@ -13,7 +13,6 @@ import { NotificationComponent } from './layout/settings/notification/notificati
 export const routes: Routes = [
   { path: '', component: SplashComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
-  { path: 'login', component: LoginComponent, pathMatch: 'full' },
   { path: 'feed/start', component: StartComponent, pathMatch: 'full' },
   { path: 'settings', component: SettingsComponent, pathMatch: 'full' },
   { path: 'settings/notification', component: NotificationComponent, pathMatch: 'full' },
