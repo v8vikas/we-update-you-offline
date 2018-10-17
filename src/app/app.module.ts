@@ -11,6 +11,8 @@ import { UICarouselModule } from 'ui-carousel';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HttpService } from './services/http.service';
+import { CountryListService } from './services/country-list.service';
+import { CommonService } from './services/common.service';
 
 
 
@@ -28,7 +30,11 @@ import { HttpService } from './services/http.service';
     AppRoutingModule,
     UICarouselModule,
   ],
-  providers: [HttpService],
+  providers: [
+    HttpService,
+    CountryListService,
+    CommonService
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 

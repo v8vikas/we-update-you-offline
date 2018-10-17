@@ -2,7 +2,7 @@
   <mat-toolbar class="header">
     <p class="title">We Update You</p>
   </mat-toolbar>
-  <div>
+  <div layout="row" layout-align="center center">
     <form [formGroup]="loginForm">
       <mat-form-field class="full-width">
         <input matInput placeholder="Username" formControlName="username">
@@ -13,7 +13,8 @@
         <mat-hint>Minimu 4 charecters</mat-hint>
       </mat-form-field>
     </form>
-    <button mat-button (click)="login()" color="warm" class="example-full-width">Login</button>
-    <button mat-button color="primary" class="example-full-width">Create Account</button>
+
+    <button mat-button (click)="login()" color="warm" class="full-width">Login</button>
+    <button mat-button [routerLink]="['/register']" color="primary" class="full-width">Create Account</button>
   </div>
 </div>

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Log } from 'ng2-logger';
-
 import { AuthService } from '../auth.service';
+import { CountryListService } from '../../../services/country-list.service';
+import { Country } from '../../../models/country';
 
 @Component({
   selector: 'app-register',
@@ -11,25 +12,28 @@ import { AuthService } from '../auth.service';
 })
 export class RegisterComponent {
 
-  loginForm: FormGroup;
-  log = Log.create('login.component');
+  registerForm: FormGroup;
+  log = Log.create('register.component');
+  countries: Country[] = [];
 
   constructor(
     private fb: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private countryListService: CountryListService
   ) {
-    this.loginForm = this.fb.group({
+
+    this.registerForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
-      cPassword: ['', Validators.required],
       cc: ['', Validators.required]
     })
+    this.countries = this.countryListService.countries;
   }
 
-  login(): void {
-    if (this.loginForm.valid) {
-      // call api for login.
-      this.authService.login(this.loginForm.value).subscribe((response) => {
+  register(): void {
+    if (this.registerForm.valid) {
+      // call api for register.
+      this.authService.register(this.registerForm.value).subscribe((response) => {
         this.log.d('response', response)
       })
     }
