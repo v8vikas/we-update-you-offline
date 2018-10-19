@@ -26,13 +26,17 @@
     </label>
   </mat-toolbar>
   <div class="feed-content">
-    <div class="feed-inr">
+
+    <div *ngIf="!allFeeds" class="feed-inr">
       <span class="st-feed">
         <img src="assets/img/start_feed.svg">
         <label>Tap to build a news feed of your interests.</label>
       </span>
 
+    </div>
 
+    <div *ngIf="allFeeds" class="feed-inr">
+      <!-- Feeds listing container -->
     </div>
   </div>
 </div>

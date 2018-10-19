@@ -11,6 +11,10 @@ import { NotificationComponent } from './layout/settings/notification/notificati
 import { RegisterComponent } from './layout/auth/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
 import { UnAuthGuard } from './guards/un-auth.guard';
+import { KeywordsAndSourcesComponent } from './layout/keywords-and-sources/keywords-and-sources.component';
+import {
+  AddKeywordsAndSourcesComponent
+} from './layout/keywords-and-sources/add-keywords-and-sources/add-keywords-and-sources.component';
 
 
 export const routes: Routes = [
@@ -20,6 +24,8 @@ export const routes: Routes = [
   { path: 'feed/start', component: StartComponent, pathMatch: 'full' },
   { path: 'settings', component: SettingsComponent, pathMatch: 'full' },
   { path: 'settings/notification', component: NotificationComponent, pathMatch: 'full' },
+  { path: 'keywords-and-sources', component: KeywordsAndSourcesComponent, pathMatch: 'full' },
+  { path: 'keywords-and-sources/add', component: AddKeywordsAndSourcesComponent, pathMatch: 'full' },
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 

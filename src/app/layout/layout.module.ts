@@ -7,6 +7,7 @@ import { MaterialModule } from './material/material.module';
 import { FeedModule } from './feed/feed.module';
 import { SettingsComponent } from './settings/settings.component';
 import { NotificationComponent } from './settings/notification/notification.component';
+import { KeywordsAndSourcesModule } from './keywords-and-sources/keywords-and-sources.module';
 
 @NgModule({
   imports: [
@@ -14,13 +15,17 @@ import { NotificationComponent } from './settings/notification/notification.comp
     AuthModule,
     RouterModule,
     MaterialModule,
-    FeedModule
+    FeedModule,
+    KeywordsAndSourcesModule
   ],
   declarations: [
     SettingsComponent,
     NotificationComponent
   ],
   exports: [
+    KeywordsAndSourcesModule,
+
+
     SettingsComponent,
     NotificationComponent
   ]

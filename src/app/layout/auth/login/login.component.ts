@@ -18,8 +18,8 @@ export class LoginComponent {
     private authService: AuthService
   ) {
     this.loginForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      username: ['', Validators.compose([Validators.required, Validators.minLength(4)])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(4)])]
     })
   }
 
@@ -27,7 +27,9 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       // call api for login.
       this.authService.login(this.loginForm.value).subscribe((response) => {
-        this.log.d('response', response)
+        this.log.d('response', response);
+      }, (error) =>{
+        this.log.er('error', error);
       })
     }
   }

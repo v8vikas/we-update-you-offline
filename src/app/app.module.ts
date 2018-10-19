@@ -31,7 +31,7 @@ import { StorageService } from './services/storage/storage.service';
     LayoutModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    UICarouselModule,
+    UICarouselModule
   ],
   providers: [
     HttpService,
