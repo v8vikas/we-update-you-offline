@@ -15,6 +15,7 @@ import { KeywordsAndSourcesComponent } from './layout/keywords-and-sources/keywo
 import {
   AddKeywordsAndSourcesComponent
 } from './layout/keywords-and-sources/add-keywords-and-sources/add-keywords-and-sources.component';
+import { PopularSourcesListComponent } from './layout/keywords-and-sources/popular-sources-list/popular-sources-list.component';
 
 
 export const routes: Routes = [
@@ -26,6 +27,7 @@ export const routes: Routes = [
   { path: 'settings/notification', component: NotificationComponent, pathMatch: 'full' },
   { path: 'keywords-and-sources', component: KeywordsAndSourcesComponent, pathMatch: 'full' },
   { path: 'keywords-and-sources/add', component: AddKeywordsAndSourcesComponent, pathMatch: 'full' },
+  { path: 'keywords-and-sources/popular-sources', component: PopularSourcesListComponent, pathMatch: 'full' },
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 

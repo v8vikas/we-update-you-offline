@@ -5,10 +5,14 @@ import {
   AddKeywordsAndSourcesComponent
 } from './add-keywords-and-sources/add-keywords-and-sources.component';
 import { PopularSourcesListComponent } from './popular-sources-list/popular-sources-list.component';
+import { RouterModule } from '@angular/router';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule,
+    RouterModule,
   ],
   declarations: [
     KeywordsAndSourcesComponent,
