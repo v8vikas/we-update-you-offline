@@ -19,18 +19,17 @@ export class RegisterComponent {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private countryListService: CountryListService
+    // private countryListService: CountryListService
   ) {
 
     this.registerForm = this.fb.group({
       username: ['', Validators.required],
-      password: ['', Validators.required],
-      cc: ['', Validators.required]
+      password: ['', Validators.required]
     })
-    this.countries = this.countryListService.countries;
   }
 
   register(): void {
+    console.log('----------this.registerForm.value---', this.registerForm.value)
     if (this.registerForm.valid) {
       // call api for register.
       this.authService.register(this.registerForm.value).subscribe((response) => {

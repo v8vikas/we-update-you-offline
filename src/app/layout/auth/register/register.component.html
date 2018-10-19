@@ -12,11 +12,11 @@
         <input matInput placeholder="Password" formControlName="password">
         <mat-hint>Minimu 4 charecters</mat-hint>
       </mat-form-field>
-      <mat-form-field>
+      <!-- <mat-form-field>
         <mat-select placeholder="Country" formControlName="cc" class="full-width">
           <mat-option *ngFor="let country of countries" [value]="country.iso">{{country.name}}</mat-option>
         </mat-select>
-      </mat-form-field>
+      </mat-form-field> -->
     </form>
     <button (click)="register()" mat-button color="primary" class="full-width">Create Account</button>
     <button [routerLink]="['/login']" mat-button color="warm" class="full-width">Already have account?</button>

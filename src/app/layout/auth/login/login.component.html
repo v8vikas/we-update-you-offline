@@ -27,11 +27,12 @@
   
   <form class="theme-form" [formGroup]="loginForm">
       <mat-form-field class="field-control full-width">
-          <input matInput placeholder="Username" [formControl]="username">
+          <input matInput placeholder="Username" formControlName="username">
           <mat-hint>Minimum 4 charecters and can contain only alphanumric.</mat-hint>
           <!-- <mat-error *ngIf="loginForm?.controls?.username.hasError('email') && !emailFormControl.hasError('required')">
               Please enter a valid User name
           </mat-error> -->
+
           <mat-error *ngIf="loginForm?.controls?.username?.hasError('required')">
               UserName is <strong>required</strong>
           </mat-error>
@@ -39,12 +40,12 @@
       
 
       <mat-form-field class="field-control full-width">
-          <input type="password" matInput placeholder="Password" [formControl]="password">
+          <input type="password" matInput placeholder="Password" formControlName="password">
           <mat-hint>Minimu 4 charecters</mat-hint>
           <!-- <mat-error *ngIf="loginForm?.controls?.password.hasError('password') && !passFormControl.hasError('required')">
               Please enter a valid Password
           </mat-error> -->
-          <mat-error *ngIf="loginForm?.controls?.password.hasError('required')">
+          <mat-error *ngIf="loginForm?.controls?.password?.hasError('required')">
               Password is <strong>required</strong>
           </mat-error>
       </mat-form-field>
