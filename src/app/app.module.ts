@@ -13,6 +13,9 @@ import { environment } from '../environments/environment';
 import { HttpService } from './services/http.service';
 import { CountryListService } from './services/country-list.service';
 import { CommonService } from './services/common.service';
+import { UnAuthGuard } from './guards/un-auth.guard';
+import { AuthGuard } from './guards/auth.guard';
+import { StorageService } from './services/storage/storage.service';
 
 
 
@@ -33,7 +36,12 @@ import { CommonService } from './services/common.service';
   providers: [
     HttpService,
     CountryListService,
-    CommonService
+    CommonService,
+    StorageService,
+
+
+    AuthGuard,
+    UnAuthGuard
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

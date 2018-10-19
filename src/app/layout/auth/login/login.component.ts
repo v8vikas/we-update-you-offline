@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Log } from 'ng2-logger';
 import { AuthService } from '../auth.service';
 
@@ -9,7 +9,7 @@ import { AuthService } from '../auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   loginForm: FormGroup;
   log = Log.create('login.component');
 
@@ -23,8 +23,6 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  ngOnInit() {
-  }
   login(): void {
     if (this.loginForm.valid) {
       // call api for login.

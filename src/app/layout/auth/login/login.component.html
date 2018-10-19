@@ -1,4 +1,4 @@
-<div class="inner">
+<!-- <div class="inner">
   <mat-toolbar class="header">
     <p class="title">We Update You</p>
   </mat-toolbar>
@@ -17,4 +17,46 @@
     <button mat-button (click)="login()" color="warm" class="full-width">Login</button>
     <button mat-button [routerLink]="['/register']" color="primary" class="full-width">Create Account</button>
   </div>
+</div> -->
+
+
+<div class="login-screen">
+  <mat-toolbar class="header-bar">
+      <span>We Update You</span>
+  </mat-toolbar>
+  
+  <form class="theme-form" [formGroup]="loginForm">
+      <mat-form-field class="field-control full-width">
+          <input matInput placeholder="Username" [formControl]="username">
+          <mat-hint>Minimum 4 charecters and can contain only alphanumric.</mat-hint>
+          <!-- <mat-error *ngIf="loginForm?.controls?.username.hasError('email') && !emailFormControl.hasError('required')">
+              Please enter a valid User name
+          </mat-error> -->
+          <mat-error *ngIf="loginForm?.controls?.username?.hasError('required')">
+              UserName is <strong>required</strong>
+          </mat-error>
+      </mat-form-field>
+      
+
+      <mat-form-field class="field-control full-width">
+          <input type="password" matInput placeholder="Password" [formControl]="password">
+          <mat-hint>Minimu 4 charecters</mat-hint>
+          <!-- <mat-error *ngIf="loginForm?.controls?.password.hasError('password') && !passFormControl.hasError('required')">
+              Please enter a valid Password
+          </mat-error> -->
+          <mat-error *ngIf="loginForm?.controls?.password.hasError('required')">
+              Password is <strong>required</strong>
+          </mat-error>
+      </mat-form-field>
+
+      <div class="field-submit full-width">
+          <span>Alrady a user?</span>
+          <button class="btn-blk btn-theme" (click)="login()" mat-button type="submit">Login</button>
+      </div>
+
+      <div class="create-acc full-width">
+          <span>For new user's</span>
+          <button class="btn-blk btn-theme" [routerLink]="['/register']" mat-button type="button">Create Account</button>
+      </div>
+  </form>
 </div>
