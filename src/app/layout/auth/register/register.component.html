@@ -1,24 +1,41 @@
-<div class="inner">
-  <mat-toolbar class="header">
-    <span class="title">We Update You</span>
+<div class="login-screen">
+  <mat-toolbar class="header-bar">
+      <span>We Update You</span>
   </mat-toolbar>
-  <div>
-    <form [formGroup]="registerForm">
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Username" formControlName="username">
-        <mat-hint>Minimum 4 charecters and can contain only alphanumric.</mat-hint>
+  
+  <form class="theme-form" [formGroup]="registerForm">
+      <mat-form-field class="field-control full-width">
+          <input matInput placeholder="Username" formControlName="username">
+          <mat-hint>Minimum 4 charecters and can contain only alphanumric.</mat-hint>
+          <!-- <mat-error *ngIf="registerForm?.controls?.username.hasError('email') && !emailFormControl.hasError('required')">
+              Please enter a valid User name
+          </mat-error> -->
+
+          <mat-error *ngIf="registerForm?.controls?.username?.hasError('required')">
+              UserName is <strong>required</strong>
+          </mat-error>
       </mat-form-field>
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Password" formControlName="password">
-        <mat-hint>Minimu 4 charecters</mat-hint>
+      
+
+      <mat-form-field class="field-control full-width">
+          <input type="password" matInput placeholder="Password" formControlName="password">
+          <mat-hint>Minimu 4 charecters</mat-hint>
+          <!-- <mat-error *ngIf="registerForm?.controls?.password.hasError('password') && !passFormControl.hasError('required')">
+              Please enter a valid Password
+          </mat-error> -->
+          <mat-error *ngIf="registerForm?.controls?.password?.hasError('required')">
+              Password is <strong>required</strong>
+          </mat-error>
       </mat-form-field>
-      <!-- <mat-form-field>
-        <mat-select placeholder="Country" formControlName="cc" class="full-width">
-          <mat-option *ngFor="let country of countries" [value]="country.iso">{{country.name}}</mat-option>
-        </mat-select>
-      </mat-form-field> -->
-    </form>
-    <button (click)="register()" mat-button color="primary" class="full-width">Create Account</button>
-    <button [routerLink]="['/login']" mat-button color="warm" class="full-width">Already have account?</button>
-  </div>
+
+      <div class="field-submit full-width">
+        <span>For new user's</span>
+        <button class="btn-blk btn-theme" (click)="register()" mat-button type="submit">Create Account</button>
+      </div>
+      
+      <div class="create-acc full-width">
+          <span>Alrady a user?</span>
+          <button class="btn-blk btn-theme" [routerLink]="['/login']" mat-button type="button">Already have account?</button>
+      </div>
+  </form>
 </div>
